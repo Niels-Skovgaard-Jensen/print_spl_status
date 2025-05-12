@@ -1,0 +1,1637 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Training status</title>
+    
+    <link href="/Content/css?v=R_x-ZlkqDMEw67umVaNF8nIjHvbYwcPuoxem16osgZU1" rel="stylesheet"/>
+
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <script src="/bundles/modernizr?v=inCVuEFe6J4Q07A0AcRsbJic_UE5MwpRMNGcOtk94TE1"></script>
+
+    
+            <script>
+            (function (i, s, o, g, r, a, m) {
+                i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+                    (i[r].q = i[r].q || []).push(arguments)
+                }, i[r].l = 1 * new Date(); a = s.createElement(o),
+                    m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+            })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+            ga('create', 'UA-61419903-1', 'auto');
+            ga('send', 'pageview');
+
+        </script>
+
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/PFG/About">
+                    <span class="fa-stack">
+                        <i class="fa fa-square-o fa-stack-2x" style="color: #008eda"></i>
+                        <i class="fa fa-plane fa-stack-1x"></i>
+                    </span>
+                        <span class="hidden-sm">Polyteknisk Flyvegruppe</span>
+                        <span class="hidden-xs hidden-md hidden-lg">PFG</span>
+                </a>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+
+                    <li><li><a href="/PFG">Day Report</a></li></li>
+                                                <li><li><a href="/PFG/Flight/Grid">Startlist</a></li></li>
+                                            <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Logbook <b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                                    <li><li><a href="/PFG/Logbook">Logbook</a></li></li>
+                                                                <li><li><a href="/PFG/TrainingLogHistory">Training flights</a></li></li>
+                                <li><li><a href="/PFG/TrainingStatus">Training status</a></li></li>
+                            </ul>
+                        </li>
+                                            <li><a href="https://pfg.dk/" class="hidden-sm">https://pfg.dk/</a></li>
+                    
+                                    </ul>
+                <ul class="nav navbar-nav navbar-right">
+                        <li class="dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+            <span class="fa fa-user"></span> Niels (552-NSJ)
+            <b class="caret"></b>
+        </a>
+        <ul class="dropdown-menu">
+            <li><li><a href="/PFG/Flight/History">Flight change history</a></li></li>
+            <li class="divider"></li>
+                            <li><li><a href="/PFG/About">About startlist.club</a></li></li>
+                            <li class="divider"></li>
+                <li>
+                    <a href="/PFG/Manage" title="Manage profile"><span class="fa fa-cog"></span> Settings</a>
+                </li>
+            <li class="divider"></li>
+            <li>
+                <a href="javascript:document.getElementById('logoutForm').submit()"><span class="fa fa-sign-out"></span> Logout</a>
+<form Style="display:none;" action="/PFG/Account/LogOff" id="logoutForm" method="post"><input name="__RequestVerificationToken" type="hidden" value="KoVAzDqOgW6j5ryj9mvRsh7jPyEpX0sVDhDjFSgCtiIP7Fgr_dj0wjRJswbjhJYqOAHgdTmcM1uQ62FQq1ILG76XNPrjX-wtiq5nGFhu1PgxKMg6Kfd07yMDXuMeJAdPNy_y6kRyFyMjuOs1buNH4Q2" /></form>            </li>
+        </ul>
+    </li>
+
+                    <li class="dropdown">
+    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+            <span class="flag-gb" title="United Kingdom" rel="tooltip"></span>
+            <span class="visible-xs">English</span>
+                                <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+        <li><a href="/PFG/Language/Set?languageIsoCode=en&amp;returnUrl=%2FPFG%2FTrainingStatus%2FPilotStatusDetails" title="English"><span class="flag-gb" title="United Kingdom" rel="tooltip"></span> English</a></li>
+        <li><a href="/PFG/Language/Set?languageIsoCode=da&amp;returnUrl=%2FPFG%2FTrainingStatus%2FPilotStatusDetails" title="Dansk"><span class="flag-dk" title="Dansk" rel="tooltip"></span> Dansk</a></li>
+        <li><a href="/PFG/Language/Set?languageIsoCode=no&amp;returnUrl=%2FPFG%2FTrainingStatus%2FPilotStatusDetails" title="Norsk"><span class="flag-no" title="Norsk" rel="tooltip"></span> Norsk</a></li>
+        <li><a href="/PFG/Language/Set?languageIsoCode=sv&amp;returnUrl=%2FPFG%2FTrainingStatus%2FPilotStatusDetails" title="Svensk"><span class="flag-se" title="Svenska" rel="tooltip"></span> Svenska</a></li>
+    </ul>
+</li>
+                    <li><a href="#" id="showhelp"><i class="fa fa-question-circle" title="Guided tour"></i></a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+<div class="container body-content">
+    
+    
+<h2>Training status</h2>
+
+    <h3>Niels Skovgaard Jensen - SPL-S SPL-certifikat, spilstart</h3>
+    <table>
+        <tr><td colspan="2">&nbsp;</td></tr>
+        <tr>
+            <td style="padding-left: 10px;" class="status-completed clickable" onclick='window.location="/PFG/TrainingLogHistory/PilotLessons?pilotId=2045&amp;lessonId=1"'>
+                <b>G1-Fortrolighed med sv&#230;veflyet</b>
+            </td>
+            <td style="padding-right: 10px;" class="status-completed">
+                
+            </td>
+        </tr>
+            <tr>
+                <td style="padding-left: 30px;" class="status-completed ">
+                    Sv&#230;veflyets opbygning
+                </td>
+                <td style="padding-right: 10px;" class="status-completed">
+                    
+                </td>
+            </tr>
+            <tr>
+                <td style="padding-left: 30px;" class="status-completed ">
+                    Cockpit, instrumenter og udstyr
+                </td>
+                <td style="padding-right: 10px;" class="status-completed">
+                    
+                </td>
+            </tr>
+            <tr>
+                <td style="padding-left: 30px;" class="status-completed ">
+                    Rorbetjening: styrepind, pedaler, luftbremser, trim og evt. flaps
+                </td>
+                <td style="padding-right: 10px;" class="status-completed">
+                    
+                </td>
+            </tr>
+            <tr>
+                <td style="padding-left: 30px;" class="status-completed ">
+                    Checklister, afpr&#248;vning og kontrol
+                </td>
+                <td style="padding-right: 10px;" class="status-completed">
+                    
+                </td>
+            </tr>
+            <tr>
+                <td style="padding-left: 30px;" class="status-completed ">
+                    Wireudl&#248;ser
+                </td>
+                <td style="padding-right: 10px;" class="status-completed">
+                    
+                </td>
+            </tr>
+            <tr>
+                <td style="padding-left: 30px;" class="status-completed ">
+                    Betjening af understel og hjulbremser
+                </td>
+                <td style="padding-right: 10px;" class="status-completed">
+                    
+                </td>
+            </tr>
+        <tr><td colspan="2">&nbsp;</td></tr>
+        <tr>
+            <td style="padding-left: 10px;" class="status-completed clickable" onclick='window.location="/PFG/TrainingLogHistory/PilotLessons?pilotId=2045&amp;lessonId=3"'>
+                <b>G2-N&#248;dprocedurer</b>
+            </td>
+            <td style="padding-right: 10px;" class="status-completed">
+                
+            </td>
+        </tr>
+            <tr>
+                <td style="padding-left: 30px;" class="status-completed ">
+                    Brug af sikkerhedsudstyr (faldsk&#230;rm)
+                </td>
+                <td style="padding-right: 10px;" class="status-completed">
+                    
+                </td>
+            </tr>
+            <tr>
+                <td style="padding-left: 30px;" class="status-completed ">
+                    Reaktioner p&#229; systemfejl og fejlbetjening
+                </td>
+                <td style="padding-right: 10px;" class="status-completed">
+                    
+                </td>
+            </tr>
+            <tr>
+                <td style="padding-left: 30px;" class="status-completed ">
+                    &#216;velse i procedure for udspring
+                </td>
+                <td style="padding-right: 10px;" class="status-completed">
+                    
+                </td>
+            </tr>
+            <tr>
+                <td style="padding-left: 30px;" class="status-completed ">
+                    &#216;velse i landing med faldsk&#230;rm i tilf&#230;lde af n&#248;dudspring
+                </td>
+                <td style="padding-right: 10px;" class="status-completed">
+                    
+                </td>
+            </tr>
+            <tr>
+                <td style="padding-left: 30px;" class="status-completed ">
+                    Sikkerhed og rapportering
+                </td>
+                <td style="padding-right: 10px;" class="status-completed">
+                    
+                </td>
+            </tr>
+        <tr><td colspan="2">&nbsp;</td></tr>
+        <tr>
+            <td style="padding-left: 10px;" class="status-completed clickable" onclick='window.location="/PFG/TrainingLogHistory/PilotLessons?pilotId=2045&amp;lessonId=2"'>
+                <b>G3-Forberedelse til flyvning</b>
+            </td>
+            <td style="padding-right: 10px;" class="status-completed">
+                
+            </td>
+        </tr>
+            <tr>
+                <td style="padding-left: 30px;" class="status-completed ">
+                    Briefing f&#248;r skoleflyvning
+                </td>
+                <td style="padding-right: 10px;" class="status-completed">
+                    
+                </td>
+            </tr>
+            <tr>
+                <td style="padding-left: 30px;" class="status-completed ">
+                    N&#248;dvendige dokumenter ombord og p&#229; pladsen
+                </td>
+                <td style="padding-right: 10px;" class="status-completed">
+                    
+                </td>
+            </tr>
+            <tr>
+                <td style="padding-left: 30px;" class="status-completed ">
+                    Udstyr som skal bruges til p&#229;t&#230;nkt flyvning
+                </td>
+                <td style="padding-right: 10px;" class="status-completed">
+                    
+                </td>
+            </tr>
+            <tr>
+                <td style="padding-left: 30px;" class="status-completed ">
+                    H&#229;ndtering af skoleflyet p&#229; jorden mv.
+                </td>
+                <td style="padding-right: 10px;" class="status-completed">
+                    
+                </td>
+            </tr>
+            <tr>
+                <td style="padding-left: 30px;" class="status-completed ">
+                    Udvendige og indvendige eftersyn p&#229; flyet
+                </td>
+                <td style="padding-right: 10px;" class="status-completed">
+                    
+                </td>
+            </tr>
+            <tr>
+                <td style="padding-left: 30px;" class="status-completed ">
+                    Sikring af v&#230;gt og balance 
+                </td>
+                <td style="padding-right: 10px;" class="status-completed">
+                    
+                </td>
+            </tr>
+            <tr>
+                <td style="padding-left: 30px;" class="status-completed ">
+                    Justering af seler, s&#230;de og pedaler 
+                </td>
+                <td style="padding-right: 10px;" class="status-completed">
+                    
+                </td>
+            </tr>
+            <tr>
+                <td style="padding-left: 30px;" class="status-completed ">
+                    Check f&#248;r start
+                </td>
+                <td style="padding-right: 10px;" class="status-completed">
+                    
+                </td>
+            </tr>
+            <tr>
+                <td style="padding-left: 30px;" class="status-completed ">
+                    Aftalt rollefordeling i uventede situationer
+                </td>
+                <td style="padding-right: 10px;" class="status-completed">
+                    
+                </td>
+            </tr>
+        <tr><td colspan="2">&nbsp;</td></tr>
+        <tr>
+            <td style="padding-left: 10px;" class="status-completed clickable" onclick='window.location="/PFG/TrainingLogHistory/PilotLessons?pilotId=2045&amp;lessonId=4"'>
+                <b>G4-TIlv&#230;nningsflyvning</b>
+            </td>
+            <td style="padding-right: 10px;" class="status-completed">
+                
+            </td>
+        </tr>
+            <tr>
+                <td style="padding-left: 30px;" class="status-completed ">
+                    Kendskab til omr&#229;det omkring flyvepladsen
+                </td>
+                <td style="padding-right: 10px;" class="status-completed">
+                    
+                </td>
+            </tr>
+            <tr>
+                <td style="padding-left: 30px;" class="status-completed ">
+                    Procedure for udkig 
+                </td>
+                <td style="padding-right: 10px;" class="status-completed">
+                    
+                </td>
+            </tr>
+        <tr><td colspan="2">&nbsp;</td></tr>
+        <tr>
+            <td style="padding-left: 10px;" class="status-completed clickable" onclick='window.location="/PFG/TrainingLogHistory/PilotLessons?pilotId=2045&amp;lessonId=5"'>
+                <b>G5-Fartkontrol og rorenes virkning</b>
+            </td>
+            <td style="padding-right: 10px;" class="status-completed">
+                
+            </td>
+        </tr>
+            <tr>
+                <td style="padding-left: 30px;" class="status-completed ">
+                    Procedure for udkig 
+                </td>
+                <td style="padding-right: 10px;" class="status-completed">
+                    
+                </td>
+            </tr>
+            <tr>
+                <td style="padding-left: 30px;" class="status-completed ">
+                    Brug af visuelle referencer
+                </td>
+                <td style="padding-right: 10px;" class="status-completed">
+                    
+                </td>
+            </tr>
+            <tr>
+                <td style="padding-left: 30px;" class="status-completed ">
+                    Effekter under ligeudflyvning og under kr&#230;ngning
+                </td>
+                <td style="padding-right: 10px;" class="status-completed">
+                    
+                </td>
+            </tr>
+            <tr>
+                <td style="padding-left: 30px;" class="status-completed ">
+                    Flyets stilling ift. horisonten og virkningen af h&#248;jderor
+                </td>
+                <td style="padding-right: 10px;" class="status-completed">
+                    
+                </td>
+            </tr>
+            <tr>
+                <td style="padding-left: 30px;" class="status-completed ">
+                    Sammenh&#230;ngen mellem flyets stilling og hastighed
+                </td>
+                <td style="padding-right: 10px;" class="status-completed">
+                    
+                </td>
+            </tr>
+            <tr>
+                <td style="padding-left: 30px;" class="status-completed ">
+                    Betydningen af kr&#230;ngerorenes sekund&#230;re virkning
+                </td>
+                <td style="padding-right: 10px;" class="status-completed">
+                    
+                </td>
+            </tr>
+            <tr>
+                <td style="padding-left: 30px;" class="status-completed ">
+                    Virkningen af luftbremser, flaps og understel hvis aktuelt
+                </td>
+                <td style="padding-right: 10px;" class="status-completed">
+                    
+                </td>
+            </tr>
+        <tr><td colspan="2">&nbsp;</td></tr>
+        <tr>
+            <td style="padding-left: 10px;" class="status-completed clickable" onclick='window.location="/PFG/TrainingLogHistory/PilotLessons?pilotId=2045&amp;lessonId=6"'>
+                <b>G6-Koordineret ind- og udgang af moderat kr&#230;ngning</b>
+            </td>
+            <td style="padding-right: 10px;" class="status-completed">
+                
+            </td>
+        </tr>
+            <tr>
+                <td style="padding-left: 30px;" class="status-completed ">
+                    Procedure for udkig 
+                </td>
+                <td style="padding-right: 10px;" class="status-completed">
+                    
+                </td>
+            </tr>
+            <tr>
+                <td style="padding-left: 30px;" class="status-completed ">
+                    Yderligere effekt af kr&#230;ngeror (sekund&#230;r virkning) og sideror (rul)
+                </td>
+                <td style="padding-right: 10px;" class="status-completed">
+                    
+                </td>
+            </tr>
+            <tr>
+                <td style="padding-left: 30px;" class="status-completed ">
+                    Koordinering af side- og kr&#230;ngeror 
+                </td>
+                <td style="padding-right: 10px;" class="status-completed">
+                    
+                </td>
+            </tr>
+            <tr>
+                <td style="padding-left: 30px;" class="status-completed ">
+                    Indgang i og udgang af moderate kr&#230;ngninger og tilbage til vandret flyvning.
+                </td>
+                <td style="padding-right: 10px;" class="status-completed">
+                    
+                </td>
+            </tr>
+        <tr><td colspan="2">&nbsp;</td></tr>
+        <tr>
+            <td style="padding-left: 10px;" class="status-completed clickable" onclick='window.location="/PFG/TrainingLogHistory/PilotLessons?pilotId=2045&amp;lessonId=7"'>
+                <b>G7-Flyvning ligeud og p&#229; kurs</b>
+            </td>
+            <td style="padding-right: 10px;" class="status-completed">
+                
+            </td>
+        </tr>
+            <tr>
+                <td style="padding-left: 30px;" class="status-completed ">
+                    Procedure for udkig 
+                </td>
+                <td style="padding-right: 10px;" class="status-completed">
+                    
+                </td>
+            </tr>
+            <tr>
+                <td style="padding-left: 30px;" class="status-completed ">
+                    Fastholdelse af ligeudflyvning
+                </td>
+                <td style="padding-right: 10px;" class="status-completed">
+                    
+                </td>
+            </tr>
+            <tr>
+                <td style="padding-left: 30px;" class="status-completed ">
+                    Flyvning ved kritisk h&#248;je hastigheder
+                </td>
+                <td style="padding-right: 10px;" class="status-completed">
+                    
+                </td>
+            </tr>
+            <tr>
+                <td style="padding-left: 30px;" class="status-completed ">
+                    Demonstration af flyets egen l&#230;ngdestabilitet
+                </td>
+                <td style="padding-right: 10px;" class="status-completed">
+                    
+                </td>
+            </tr>
+            <tr>
+                <td style="padding-left: 30px;" class="status-completed ">
+                    Kontrol af dykvinkel incl. brug af trim 
+                </td>
+                <td style="padding-right: 10px;" class="status-completed">
+                    
+                </td>
+            </tr>
+            <tr>
+                <td style="padding-left: 30px;" class="status-completed ">
+                    Normalstilling, retning, balance og trim
+                </td>
+                <td style="padding-right: 10px;" class="status-completed">
+                    
+                </td>
+            </tr>
+            <tr>
+                <td style="padding-left: 30px;" class="status-completed ">
+                    Flyvehastighed – overv&#229;gning og p&#229;virkning
+                </td>
+                <td style="padding-right: 10px;" class="status-completed">
+                    
+                </td>
+            </tr>
+        <tr><td colspan="2">&nbsp;</td></tr>
+        <tr>
+            <td style="padding-left: 10px;" class="status-in-progress clickable" onclick='window.location="/PFG/TrainingLogHistory/PilotLessons?pilotId=2045&amp;lessonId=8"'>
+                <b>G8-Drej</b>
+            </td>
+            <td style="padding-right: 10px;" class="status-in-progress">
+                
+            </td>
+        </tr>
+            <tr>
+                <td style="padding-left: 30px;" class="status-completed ">
+                    Procedure for udkig 
+                </td>
+                <td style="padding-right: 10px;" class="status-completed">
+                    
+                </td>
+            </tr>
+            <tr>
+                <td style="padding-left: 30px;" class="status-in-progress ">
+                    Demonstration og korrektion af kr&#230;ngerorenes sekund&#230;re virkning
+                </td>
+                <td style="padding-right: 10px;" class="status-in-progress">
+                    
+                </td>
+            </tr>
+            <tr>
+                <td style="padding-left: 30px;" class="status-completed ">
+                    Indgang i drej med moderat kr&#230;ngning
+                </td>
+                <td style="padding-right: 10px;" class="status-completed">
+                    
+                </td>
+            </tr>
+            <tr>
+                <td style="padding-left: 30px;" class="status-completed ">
+                    Fastholdelse af drejet
+                </td>
+                <td style="padding-right: 10px;" class="status-completed">
+                    
+                </td>
+            </tr>
+            <tr>
+                <td style="padding-left: 30px;" class="status-completed ">
+                    Udgang af drejet
+                </td>
+                <td style="padding-right: 10px;" class="status-completed">
+                    
+                </td>
+            </tr>
+            <tr>
+                <td style="padding-left: 30px;" class="status-in-progress ">
+                    Fejl under drejet (sideglidning, udskridning og fartkontrol)
+                </td>
+                <td style="padding-right: 10px;" class="status-in-progress">
+                    
+                </td>
+            </tr>
+            <tr>
+                <td style="padding-left: 30px;" class="status-completed ">
+                    Udkig under drejet. 
+                </td>
+                <td style="padding-right: 10px;" class="status-completed">
+                    
+                </td>
+            </tr>
+            <tr>
+                <td style="padding-left: 30px;" class="status-not-started ">
+                    Drej til bestemte kurser – brug af kompas
+                </td>
+                <td style="padding-right: 10px;" class="status-not-started">
+                    
+                </td>
+            </tr>
+            <tr>
+                <td style="padding-left: 30px;" class="status-in-progress ">
+                    Brug af instrumenter til det perfekte drej (kugle = kr&#230;ngningsviser og uldsnor)
+                </td>
+                <td style="padding-right: 10px;" class="status-in-progress">
+                    
+                </td>
+            </tr>
+        <tr><td colspan="2">&nbsp;</td></tr>
+        <tr>
+            <td style="padding-left: 10px;" class="status-in-progress clickable" onclick='window.location="/PFG/TrainingLogHistory/PilotLessons?pilotId=2045&amp;lessonId=9"'>
+                <b>G9-Spilstart</b>
+            </td>
+            <td style="padding-right: 10px;" class="status-in-progress">
+                
+            </td>
+        </tr>
+            <tr>
+                <td style="padding-left: 30px;" class="status-completed ">
+                    Signaler og kommunikation f&#248;r og under spilstart. 
+                </td>
+                <td style="padding-right: 10px;" class="status-completed">
+                    
+                </td>
+            </tr>
+            <tr>
+                <td style="padding-left: 30px;" class="status-completed ">
+                    Brug af udstyr i forbindelse med spilstart
+                </td>
+                <td style="padding-right: 10px;" class="status-completed">
+                    
+                </td>
+            </tr>
+            <tr>
+                <td style="padding-left: 30px;" class="status-completed ">
+                    Cockpitcheck f&#248;r spilstart
+                </td>
+                <td style="padding-right: 10px;" class="status-completed">
+                    
+                </td>
+            </tr>
+            <tr>
+                <td style="padding-left: 30px;" class="status-in-progress ">
+                    Spilstart i direkte modvind
+                </td>
+                <td style="padding-right: 10px;" class="status-in-progress">
+                    
+                </td>
+            </tr>
+            <tr>
+                <td style="padding-left: 30px;" class="status-in-progress ">
+                    Spilstart i sidevind 
+                </td>
+                <td style="padding-right: 10px;" class="status-in-progress">
+                    
+                </td>
+            </tr>
+            <tr>
+                <td style="padding-left: 30px;" class="status-completed ">
+                    Begr&#230;nsninger i spilstart, korrekt profil og sikker spilstart
+                </td>
+                <td style="padding-right: 10px;" class="status-completed">
+                    
+                </td>
+            </tr>
+            <tr>
+                <td style="padding-left: 30px;" class="status-completed ">
+                    Procedure for udl&#248;sning af wiren 
+                </td>
+                <td style="padding-right: 10px;" class="status-completed">
+                    
+                </td>
+            </tr>
+            <tr>
+                <td style="padding-left: 30px;" class="status-not-started ">
+                    Procedure for fejltilstande, som simuleres under spilstarten
+                </td>
+                <td style="padding-right: 10px;" class="status-not-started">
+                    
+                </td>
+            </tr>
+            <tr>
+                <td style="padding-left: 30px;" class="status-completed ">
+                    Varslet afbrudt start i stor h&#248;jde
+                </td>
+                <td style="padding-right: 10px;" class="status-completed">
+                    
+                </td>
+            </tr>
+            <tr>
+                <td style="padding-left: 30px;" class="status-not-started ">
+                    Varslet afbrudt start i mellemh&#248;jde 
+                </td>
+                <td style="padding-right: 10px;" class="status-not-started">
+                    
+                </td>
+            </tr>
+            <tr>
+                <td style="padding-left: 30px;" class="status-not-started ">
+                    Varslet afbrudt start i lav h&#248;jde 
+                </td>
+                <td style="padding-right: 10px;" class="status-not-started">
+                    
+                </td>
+            </tr>
+        <tr><td colspan="2">&nbsp;</td></tr>
+        <tr>
+            <td style="padding-left: 10px;" class="status-not-started clickable" onclick='window.location="/PFG/TrainingLogHistory/PilotLessons?pilotId=2045&amp;lessonId=10"'>
+                <b>G10-Langsomflyvning</b>
+            </td>
+            <td style="padding-right: 10px;" class="status-not-started">
+                
+            </td>
+        </tr>
+            <tr>
+                <td style="padding-left: 30px;" class="status-not-started ">
+                    Udkig og sikkerhedscheck 
+                </td>
+                <td style="padding-right: 10px;" class="status-not-started">
+                    
+                </td>
+            </tr>
+            <tr>
+                <td style="padding-left: 30px;" class="status-not-started ">
+                    Introduktion til karakteristika ved langsomflyvning
+                </td>
+                <td style="padding-right: 10px;" class="status-not-started">
+                    
+                </td>
+            </tr>
+            <tr>
+                <td style="padding-left: 30px;" class="status-not-started ">
+                    Kontrolleret flyvning ved kritisk lav h&#248;j indfaldsvinkel (lav flyvehastighed)
+                </td>
+                <td style="padding-right: 10px;" class="status-not-started">
+                    
+                </td>
+            </tr>
+            <tr>
+                <td style="padding-left: 30px;" class="status-not-started ">
+                    Uvarslet afbrudt start i stor h&#248;jde
+                </td>
+                <td style="padding-right: 10px;" class="status-not-started">
+                    
+                </td>
+            </tr>
+        <tr><td colspan="2">&nbsp;</td></tr>
+        <tr>
+            <td style="padding-left: 10px;" class="status-in-progress clickable" onclick='window.location="/PFG/TrainingLogHistory/PilotLessons?pilotId=2045&amp;lessonId=11"'>
+                <b>G11-Landingsrunde, indflyvning og landing</b>
+            </td>
+            <td style="padding-right: 10px;" class="status-in-progress">
+                
+            </td>
+        </tr>
+            <tr>
+                <td style="padding-left: 30px;" class="status-in-progress ">
+                    Procedure for at g&#229; ind i en korrekt landingsrunde
+                </td>
+                <td style="padding-right: 10px;" class="status-in-progress">
+                    
+                </td>
+            </tr>
+            <tr>
+                <td style="padding-left: 30px;" class="status-not-started ">
+                    Forebyggelse af kollision – teknik og procedurer for udkig
+                </td>
+                <td style="padding-right: 10px;" class="status-not-started">
+                    
+                </td>
+            </tr>
+            <tr>
+                <td style="padding-left: 30px;" class="status-not-started ">
+                    Cockpitcheck f&#248;r landing. Procedure for landingsrunde, medvindsben og base 
+                </td>
+                <td style="padding-right: 10px;" class="status-not-started">
+                    
+                </td>
+            </tr>
+            <tr>
+                <td style="padding-left: 30px;" class="status-not-started ">
+                    Vindens indflydelse p&#229; landingsrunden, wind shear p&#229; indflyvning og s&#230;tningshastighed
+                </td>
+                <td style="padding-right: 10px;" class="status-not-started">
+                    
+                </td>
+            </tr>
+            <tr>
+                <td style="padding-left: 30px;" class="status-not-started ">
+                    Brug af flaps hvis aktuelt
+                </td>
+                <td style="padding-right: 10px;" class="status-not-started">
+                    
+                </td>
+            </tr>
+            <tr>
+                <td style="padding-left: 30px;" class="status-not-started ">
+                    Visualisering af sigtepunkt
+                </td>
+                <td style="padding-right: 10px;" class="status-not-started">
+                    
+                </td>
+            </tr>
+            <tr>
+                <td style="padding-left: 30px;" class="status-completed ">
+                    Regulering af indflyvning vha. luftbremser
+                </td>
+                <td style="padding-right: 10px;" class="status-completed">
+                    
+                </td>
+            </tr>
+            <tr>
+                <td style="padding-left: 30px;" class="status-in-progress ">
+                    Udfladning og s&#230;tning
+                </td>
+                <td style="padding-right: 10px;" class="status-in-progress">
+                    
+                </td>
+            </tr>
+            <tr>
+                <td style="padding-left: 30px;" class="status-not-started ">
+                    Indflyvning under forskellige vindforhold – herunder i sidevind
+                </td>
+                <td style="padding-right: 10px;" class="status-not-started">
+                    
+                </td>
+            </tr>
+            <tr>
+                <td style="padding-left: 30px;" class="status-not-started ">
+                    Procedure og teknik for en kort landing
+                </td>
+                <td style="padding-right: 10px;" class="status-not-started">
+                    
+                </td>
+            </tr>
+        <tr><td colspan="2">&nbsp;</td></tr>
+        <tr>
+            <td style="padding-left: 10px;" class="status-not-started clickable" onclick='window.location="/PFG/TrainingLogHistory/PilotLessons?pilotId=2045&amp;lessonId=12"'>
+                <b>G12-Stall og sideglidning</b>
+            </td>
+            <td style="padding-right: 10px;" class="status-not-started">
+                
+            </td>
+        </tr>
+            <tr>
+                <td style="padding-left: 30px;" class="status-not-started ">
+                    Udkig og sikkerhedscheck 
+                </td>
+                <td style="padding-right: 10px;" class="status-not-started">
+                    
+                </td>
+            </tr>
+            <tr>
+                <td style="padding-left: 30px;" class="status-not-started ">
+                    Symptomer f&#248;r et stall, erkendelse og genopretning
+                </td>
+                <td style="padding-right: 10px;" class="status-not-started">
+                    
+                </td>
+            </tr>
+            <tr>
+                <td style="padding-left: 30px;" class="status-not-started ">
+                    Symptomer p&#229; stall, erkendelse og genopretning under ligeudflyvning og under drej
+                </td>
+                <td style="padding-right: 10px;" class="status-not-started">
+                    
+                </td>
+            </tr>
+            <tr>
+                <td style="padding-left: 30px;" class="status-not-started ">
+                    Genopretning hvis den ene vinge dykker
+                </td>
+                <td style="padding-right: 10px;" class="status-not-started">
+                    
+                </td>
+            </tr>
+            <tr>
+                <td style="padding-left: 30px;" class="status-not-started ">
+                    Risiko for stall under indflyvning og i landingskonfiguration
+                </td>
+                <td style="padding-right: 10px;" class="status-not-started">
+                    
+                </td>
+            </tr>
+            <tr>
+                <td style="padding-left: 30px;" class="status-not-started ">
+                    Erkendelse af og udretning fra accelererede stalls (Stor G-p&#229;virkning og kr&#230;ngning)
+                </td>
+                <td style="padding-right: 10px;" class="status-not-started">
+                    
+                </td>
+            </tr>
+            <tr>
+                <td style="padding-left: 30px;" class="status-not-started ">
+                    Sideglidning som hj&#230;lp til at &#248;ge synkehastigheden f.eks. under landing
+                </td>
+                <td style="padding-right: 10px;" class="status-not-started">
+                    
+                </td>
+            </tr>
+            <tr>
+                <td style="padding-left: 30px;" class="status-not-started ">
+                    Uvarslet afbrudt start i lav h&#248;jde
+                </td>
+                <td style="padding-right: 10px;" class="status-not-started">
+                    
+                </td>
+            </tr>
+        <tr><td colspan="2">&nbsp;</td></tr>
+        <tr>
+            <td style="padding-left: 10px;" class="status-not-started clickable" onclick='window.location="/PFG/TrainingLogHistory/PilotLessons?pilotId=2045&amp;lessonId=13"'>
+                <b>G13-Erkendelse og forebyggelse af spin og styrtspiral</b>
+            </td>
+            <td style="padding-right: 10px;" class="status-not-started">
+                
+            </td>
+        </tr>
+            <tr>
+                <td style="padding-left: 30px;" class="status-not-started ">
+                    Udkig og sikkerhedscheck
+                </td>
+                <td style="padding-right: 10px;" class="status-not-started">
+                    
+                </td>
+            </tr>
+            <tr>
+                <td style="padding-left: 30px;" class="status-not-started ">
+                    Stall med opretning fra f&#248;rste stadie i et spin
+                </td>
+                <td style="padding-right: 10px;" class="status-not-started">
+                    
+                </td>
+            </tr>
+            <tr>
+                <td style="padding-left: 30px;" class="status-not-started ">
+                    Erkendelse af indgangen i et fuldt udviklet spin.
+                </td>
+                <td style="padding-right: 10px;" class="status-not-started">
+                    
+                </td>
+            </tr>
+            <tr>
+                <td style="padding-left: 30px;" class="status-not-started ">
+                    Erkendelse af et fuldt udviklet spin 
+                </td>
+                <td style="padding-right: 10px;" class="status-not-started">
+                    
+                </td>
+            </tr>
+            <tr>
+                <td style="padding-left: 30px;" class="status-not-started ">
+                    Standardprocedure for udretning fra spin
+                </td>
+                <td style="padding-right: 10px;" class="status-not-started">
+                    
+                </td>
+            </tr>
+            <tr>
+                <td style="padding-left: 30px;" class="status-not-started ">
+                    Distraktion foretaget af instrukt&#248;ren ifm. indgang i spin
+                </td>
+                <td style="padding-right: 10px;" class="status-not-started">
+                    
+                </td>
+            </tr>
+            <tr>
+                <td style="padding-left: 30px;" class="status-not-started ">
+                    Erkendelse af styrtspiral 
+                </td>
+                <td style="padding-right: 10px;" class="status-not-started">
+                    
+                </td>
+            </tr>
+            <tr>
+                <td style="padding-left: 30px;" class="status-not-started ">
+                    Udretning fra styrtspiral
+                </td>
+                <td style="padding-right: 10px;" class="status-not-started">
+                    
+                </td>
+            </tr>
+            <tr>
+                <td style="padding-left: 30px;" class="status-not-started ">
+                    Differentiering mellem spin og styrtspira
+                </td>
+                <td style="padding-right: 10px;" class="status-not-started">
+                    
+                </td>
+            </tr>
+            <tr>
+                <td style="padding-left: 30px;" class="status-not-started ">
+                    Uvarslet afbrudt start i mellemh&#248;jde
+                </td>
+                <td style="padding-right: 10px;" class="status-not-started">
+                    
+                </td>
+            </tr>
+        <tr><td colspan="2">&nbsp;</td></tr>
+        <tr>
+            <td style="padding-left: 10px;" class="status-not-started clickable" onclick='window.location="/PFG/TrainingLogHistory/PilotLessons?pilotId=2045&amp;lessonId=14"'>
+                <b>U14-F&#248;rste soloflyvninger</b>
+            </td>
+            <td style="padding-right: 10px;" class="status-not-started">
+                
+            </td>
+        </tr>
+            <tr>
+                <td style="padding-left: 30px;" class="status-not-started ">
+                    Gennemf&#248;rt tr&#230;ning i brug af flyets radio, hvis eleven ikke har radiocertifikat – UHB975
+                </td>
+                <td style="padding-right: 10px;" class="status-not-started">
+                    
+                </td>
+            </tr>
+            <tr>
+                <td style="padding-left: 30px;" class="status-not-started ">
+                    Relevant teori forud for soloflyvning, hvis eleven ikke har best&#229;et SPL-teoripr&#248;ven
+                </td>
+                <td style="padding-right: 10px;" class="status-not-started">
+                    
+                </td>
+            </tr>
+            <tr>
+                <td style="padding-left: 30px;" class="status-not-started ">
+                    Instrukt&#248;rens briefing incl. begr&#230;nsninger
+                </td>
+                <td style="padding-right: 10px;" class="status-not-started">
+                    
+                </td>
+            </tr>
+            <tr>
+                <td style="padding-left: 30px;" class="status-not-started ">
+                    Lokalomr&#229;det og restriktioner 
+                </td>
+                <td style="padding-right: 10px;" class="status-not-started">
+                    
+                </td>
+            </tr>
+            <tr>
+                <td style="padding-left: 30px;" class="status-not-started ">
+                    Brug af n&#248;dvendigt udstyr 
+                </td>
+                <td style="padding-right: 10px;" class="status-not-started">
+                    
+                </td>
+            </tr>
+            <tr>
+                <td style="padding-left: 30px;" class="status-not-started ">
+                    Effekt p&#229; tyngdepunktets placering og flyet man&#248;vredygtighed
+                </td>
+                <td style="padding-right: 10px;" class="status-not-started">
+                    
+                </td>
+            </tr>
+            <tr>
+                <td style="padding-left: 30px;" class="status-not-started ">
+                    Min. tre soloflyvninger p&#229; skoleflyet efterfulgt af instrukt&#248;rens debriefing
+                </td>
+                <td style="padding-right: 10px;" class="status-not-started">
+                    
+                </td>
+            </tr>
+            <tr>
+                <td style="padding-left: 30px;" class="status-not-started ">
+                    Omskoling til en-s&#230;det skolefly - h&#229;ndbog
+                </td>
+                <td style="padding-right: 10px;" class="status-not-started">
+                    
+                </td>
+            </tr>
+            <tr>
+                <td style="padding-left: 30px;" class="status-not-started ">
+                    En-s&#230;det sv&#230;vefly - Systemkendskab - adskillelse  og samling - Indretning af cockpit
+                </td>
+                <td style="padding-right: 10px;" class="status-not-started">
+                    
+                </td>
+            </tr>
+            <tr>
+                <td style="padding-left: 30px;" class="status-not-started ">
+                    En-s&#230;det sv&#230;vefly - spilstart
+                </td>
+                <td style="padding-right: 10px;" class="status-not-started">
+                    
+                </td>
+            </tr>
+            <tr>
+                <td style="padding-left: 30px;" class="status-not-started ">
+                    En-s&#230;det sv&#230;vefly - drej og kurveskift
+                </td>
+                <td style="padding-right: 10px;" class="status-not-started">
+                    
+                </td>
+            </tr>
+            <tr>
+                <td style="padding-left: 30px;" class="status-not-started ">
+                    En-s&#230;det sv&#230;vefly - hurtig flyvning
+                </td>
+                <td style="padding-right: 10px;" class="status-not-started">
+                    
+                </td>
+            </tr>
+            <tr>
+                <td style="padding-left: 30px;" class="status-not-started ">
+                    En-s&#230;det sv&#230;vefly - langsomflyvning og stall
+                </td>
+                <td style="padding-right: 10px;" class="status-not-started">
+                    
+                </td>
+            </tr>
+            <tr>
+                <td style="padding-left: 30px;" class="status-not-started ">
+                    En-s&#230;det sv&#230;vefly - m&#230;rkelanding
+                </td>
+                <td style="padding-right: 10px;" class="status-not-started">
+                    
+                </td>
+            </tr>
+        <tr><td colspan="2">&nbsp;</td></tr>
+        <tr>
+            <td style="padding-left: 10px;" class="status-not-started clickable" onclick='window.location="/PFG/TrainingLogHistory/PilotLessons?pilotId=2045&amp;lessonId=15"'>
+                <b>U15-Avancerede drej</b>
+            </td>
+            <td style="padding-right: 10px;" class="status-not-started">
+                
+            </td>
+        </tr>
+            <tr>
+                <td style="padding-left: 30px;" class="status-not-started ">
+                    Drej med 45 graders kr&#230;ngning eller mere
+                </td>
+                <td style="padding-right: 10px;" class="status-not-started">
+                    
+                </td>
+            </tr>
+            <tr>
+                <td style="padding-left: 30px;" class="status-not-started ">
+                    Forebyggelse af stall og spin under drej samt genopretning
+                </td>
+                <td style="padding-right: 10px;" class="status-not-started">
+                    
+                </td>
+            </tr>
+            <tr>
+                <td style="padding-left: 30px;" class="status-not-started ">
+                    Genopretning fra unormale flyvestillinger incl. styrtspiral
+                </td>
+                <td style="padding-right: 10px;" class="status-not-started">
+                    
+                </td>
+            </tr>
+        <tr><td colspan="2">&nbsp;</td></tr>
+        <tr>
+            <td style="padding-left: 10px;" class="status-in-progress clickable" onclick='window.location="/PFG/TrainingLogHistory/PilotLessons?pilotId=2045&amp;lessonId=16"'>
+                <b>U16-Termikflyvning</b>
+            </td>
+            <td style="padding-right: 10px;" class="status-in-progress">
+                
+            </td>
+        </tr>
+            <tr>
+                <td style="padding-left: 30px;" class="status-not-started ">
+                    Procedure for udkig 
+                </td>
+                <td style="padding-right: 10px;" class="status-not-started">
+                    
+                </td>
+            </tr>
+            <tr>
+                <td style="padding-left: 30px;" class="status-in-progress ">
+                    Termiks&#248;gning og -erkendelse
+                </td>
+                <td style="padding-right: 10px;" class="status-in-progress">
+                    
+                </td>
+            </tr>
+            <tr>
+                <td style="padding-left: 30px;" class="status-not-started ">
+                    Brug af lydsignaler fra instrumenterne
+                </td>
+                <td style="padding-right: 10px;" class="status-not-started">
+                    
+                </td>
+            </tr>
+            <tr>
+                <td style="padding-left: 30px;" class="status-not-started ">
+                    Indgang i opvindsomr&#229;det og placering ift. andre sv&#230;vefly
+                </td>
+                <td style="padding-right: 10px;" class="status-not-started">
+                    
+                </td>
+            </tr>
+            <tr>
+                <td style="padding-left: 30px;" class="status-not-started ">
+                    Flyvning t&#230;t p&#229; andre sv&#230;vefly
+                </td>
+                <td style="padding-right: 10px;" class="status-not-started">
+                    
+                </td>
+            </tr>
+            <tr>
+                <td style="padding-left: 30px;" class="status-in-progress ">
+                    Centrering af termikken
+                </td>
+                <td style="padding-right: 10px;" class="status-in-progress">
+                    
+                </td>
+            </tr>
+            <tr>
+                <td style="padding-left: 30px;" class="status-not-started ">
+                    Teknik til at forlade termikken 
+                </td>
+                <td style="padding-right: 10px;" class="status-not-started">
+                    
+                </td>
+            </tr>
+            <tr>
+                <td style="padding-left: 30px;" class="status-not-started ">
+                    Overvejelse om evt. brug af ilt 
+                </td>
+                <td style="padding-right: 10px;" class="status-not-started">
+                    
+                </td>
+            </tr>
+        <tr><td colspan="2">&nbsp;</td></tr>
+        <tr>
+            <td style="padding-left: 10px;" class="status-not-started clickable" onclick='window.location="/PFG/TrainingLogHistory/PilotLessons?pilotId=2045&amp;lessonId=17"'>
+                <b>U17-Udelanding</b>
+            </td>
+            <td style="padding-right: 10px;" class="status-not-started">
+                
+            </td>
+        </tr>
+            <tr>
+                <td style="padding-left: 30px;" class="status-not-started ">
+                    Glideafstand og muligheder
+                </td>
+                <td style="padding-right: 10px;" class="status-not-started">
+                    
+                </td>
+            </tr>
+            <tr>
+                <td style="padding-left: 30px;" class="status-not-started ">
+                    Genstartsprocedure (kun selvstartende og turbo sv&#230;vefly)
+                </td>
+                <td style="padding-right: 10px;" class="status-not-started">
+                    
+                </td>
+            </tr>
+            <tr>
+                <td style="padding-left: 30px;" class="status-not-started ">
+                    Beslutningsproces om ikke at genstarte motor, men v&#230;lge en udelanding
+                </td>
+                <td style="padding-right: 10px;" class="status-not-started">
+                    
+                </td>
+            </tr>
+            <tr>
+                <td style="padding-left: 30px;" class="status-not-started ">
+                    Udv&#230;lgelse af egnede landingsomr&#229;der
+                </td>
+                <td style="padding-right: 10px;" class="status-not-started">
+                    
+                </td>
+            </tr>
+            <tr>
+                <td style="padding-left: 30px;" class="status-not-started ">
+                    Bed&#248;mmelse af landingsrunde og n&#248;glepositioner
+                </td>
+                <td style="padding-right: 10px;" class="status-not-started">
+                    
+                </td>
+            </tr>
+            <tr>
+                <td style="padding-left: 30px;" class="status-not-started ">
+                    Procedurer for landingsrunde og indflyvning
+                </td>
+                <td style="padding-right: 10px;" class="status-not-started">
+                    
+                </td>
+            </tr>
+            <tr>
+                <td style="padding-left: 30px;" class="status-not-started ">
+                    Bestemmelse af vindretning
+                </td>
+                <td style="padding-right: 10px;" class="status-not-started">
+                    
+                </td>
+            </tr>
+            <tr>
+                <td style="padding-left: 30px;" class="status-not-started ">
+                    Valg af landingsretning
+                </td>
+                <td style="padding-right: 10px;" class="status-not-started">
+                    
+                </td>
+            </tr>
+            <tr>
+                <td style="padding-left: 30px;" class="status-not-started ">
+                    Overvejelser ved landing i kuperet terr&#230;n
+                </td>
+                <td style="padding-right: 10px;" class="status-not-started">
+                    
+                </td>
+            </tr>
+            <tr>
+                <td style="padding-left: 30px;" class="status-not-started ">
+                    Handlinger efter landing 
+                </td>
+                <td style="padding-right: 10px;" class="status-not-started">
+                    
+                </td>
+            </tr>
+        <tr><td colspan="2">&nbsp;</td></tr>
+        <tr>
+            <td style="padding-left: 10px;" class="status-not-started clickable" onclick='window.location="/PFG/TrainingLogHistory/PilotLessons?pilotId=2045&amp;lessonId=18"'>
+                <b>U18-Planl&#230;gning af str&#230;kflyvning</b>
+            </td>
+            <td style="padding-right: 10px;" class="status-not-started">
+                
+            </td>
+        </tr>
+            <tr>
+                <td style="padding-left: 30px;" class="status-not-started ">
+                    Aktuelt vejr og vejrudsigter
+                </td>
+                <td style="padding-right: 10px;" class="status-not-started">
+                    
+                </td>
+            </tr>
+            <tr>
+                <td style="padding-left: 30px;" class="status-not-started ">
+                    NOTAM’s og betragtninger omkring luftrum
+                </td>
+                <td style="padding-right: 10px;" class="status-not-started">
+                    
+                </td>
+            </tr>
+            <tr>
+                <td style="padding-left: 30px;" class="status-not-started ">
+                    Valg af flyvekort og forberedelse af kortet
+                </td>
+                <td style="padding-right: 10px;" class="status-not-started">
+                    
+                </td>
+            </tr>
+            <tr>
+                <td style="padding-left: 30px;" class="status-not-started ">
+                    Planl&#230;gning af ruten
+                </td>
+                <td style="padding-right: 10px;" class="status-not-started">
+                    
+                </td>
+            </tr>
+            <tr>
+                <td style="padding-left: 30px;" class="status-not-started ">
+                    Radiofrekvenser hvis aktuelt
+                </td>
+                <td style="padding-right: 10px;" class="status-not-started">
+                    
+                </td>
+            </tr>
+            <tr>
+                <td style="padding-left: 30px;" class="status-not-started ">
+                    Administrative procedurer f&#248;r start incl. ekstra udstyr
+                </td>
+                <td style="padding-right: 10px;" class="status-not-started">
+                    
+                </td>
+            </tr>
+            <tr>
+                <td style="padding-left: 30px;" class="status-not-started ">
+                    ATC-flyveplan hvis aktuelt
+                </td>
+                <td style="padding-right: 10px;" class="status-not-started">
+                    
+                </td>
+            </tr>
+            <tr>
+                <td style="padding-left: 30px;" class="status-not-started ">
+                    V&#230;gtberegning ift. flyets pr&#230;stationer
+                </td>
+                <td style="padding-right: 10px;" class="status-not-started">
+                    
+                </td>
+            </tr>
+            <tr>
+                <td style="padding-left: 30px;" class="status-not-started ">
+                    Beregning af v&#230;gt og balance 
+                </td>
+                <td style="padding-right: 10px;" class="status-not-started">
+                    
+                </td>
+            </tr>
+            <tr>
+                <td style="padding-left: 30px;" class="status-not-started ">
+                    Alternative landingsmuligheder – flyvepladser og egnede landingsomr&#229;der
+                </td>
+                <td style="padding-right: 10px;" class="status-not-started">
+                    
+                </td>
+            </tr>
+            <tr>
+                <td style="padding-left: 30px;" class="status-not-started ">
+                    Sikkerhedsh&#248;jde
+                </td>
+                <td style="padding-right: 10px;" class="status-not-started">
+                    
+                </td>
+            </tr>
+        <tr><td colspan="2">&nbsp;</td></tr>
+        <tr>
+            <td style="padding-left: 10px;" class="status-not-started clickable" onclick='window.location="/PFG/TrainingLogHistory/PilotLessons?pilotId=2045&amp;lessonId=19"'>
+                <b>U19-Navigation under str&#230;kflyvning</b>
+            </td>
+            <td style="padding-right: 10px;" class="status-not-started">
+                
+            </td>
+        </tr>
+            <tr>
+                <td style="padding-left: 30px;" class="status-not-started ">
+                    Fastholdelse af ruten og overvejelser om at afvige fra den planlagte rute
+                </td>
+                <td style="padding-right: 10px;" class="status-not-started">
+                    
+                </td>
+            </tr>
+            <tr>
+                <td style="padding-left: 30px;" class="status-not-started ">
+                    Brug af radio og fraseologi – hvis aktuelt
+                </td>
+                <td style="padding-right: 10px;" class="status-not-started">
+                    
+                </td>
+            </tr>
+            <tr>
+                <td style="padding-left: 30px;" class="status-not-started ">
+                    Planl&#230;gning under flyvning
+                </td>
+                <td style="padding-right: 10px;" class="status-not-started">
+                    
+                </td>
+            </tr>
+            <tr>
+                <td style="padding-left: 30px;" class="status-not-started ">
+                    Flyvning i kontrolleret luftrum
+                </td>
+                <td style="padding-right: 10px;" class="status-not-started">
+                    
+                </td>
+            </tr>
+            <tr>
+                <td style="padding-left: 30px;" class="status-not-started ">
+                    Procedure ved usikkerhed om position
+                </td>
+                <td style="padding-right: 10px;" class="status-not-started">
+                    
+                </td>
+            </tr>
+            <tr>
+                <td style="padding-left: 30px;" class="status-not-started ">
+                    Procedure n&#229;r man ikke l&#230;ngere ved, hvor man er
+                </td>
+                <td style="padding-right: 10px;" class="status-not-started">
+                    
+                </td>
+            </tr>
+            <tr>
+                <td style="padding-left: 30px;" class="status-not-started ">
+                    Brug af supplerende udstyr hvis n&#248;dvendigt
+                </td>
+                <td style="padding-right: 10px;" class="status-not-started">
+                    
+                </td>
+            </tr>
+            <tr>
+                <td style="padding-left: 30px;" class="status-not-started ">
+                    Ankomst til og indgang i landingsrunden til en fremmed flyveplads
+                </td>
+                <td style="padding-right: 10px;" class="status-not-started">
+                    
+                </td>
+            </tr>
+        <tr><td colspan="2">&nbsp;</td></tr>
+        <tr>
+            <td style="padding-left: 10px;" class="status-not-started clickable" onclick='window.location="/PFG/TrainingLogHistory/PilotLessons?pilotId=2045&amp;lessonId=20"'>
+                <b>U20-Str&#230;kflyvningsteknik og -optimering</b>
+            </td>
+            <td style="padding-right: 10px;" class="status-not-started">
+                
+            </td>
+        </tr>
+            <tr>
+                <td style="padding-left: 30px;" class="status-not-started ">
+                    Procedure for udkig
+                </td>
+                <td style="padding-right: 10px;" class="status-not-started">
+                    
+                </td>
+            </tr>
+            <tr>
+                <td style="padding-left: 30px;" class="status-not-started ">
+                    Maksimering af potentialet i str&#230;kflyvningen
+                </td>
+                <td style="padding-right: 10px;" class="status-not-started">
+                    
+                </td>
+            </tr>
+            <tr>
+                <td style="padding-left: 30px;" class="status-not-started ">
+                    Reduktion af risici og reaktion p&#229; trusler
+                </td>
+                <td style="padding-right: 10px;" class="status-not-started">
+                    
+                </td>
+            </tr>
+    </table>                                             
+
+
+</div>
+
+
+<div class="container footer-content">
+    <footer>
+        <p class="pull-right btn-xs">
+
+            &copy; <a href="/PFG/About">About startlist.club</a> <span class="glyphicon glyphicon-stats"></span>&nbsp; 11. maj 2025 09:21
+        </p>
+        <form action="/PFG/Club/SetCurrentClub" method="post">    <select name="shortName" onchange="submit()" class="btn btn-default btn-xs">
+        <option value="">Select a flightclub (unfiltered)</option> 
+            <option value="AVIATOR" >
+                AVIATOR - Aalborg Sv&#230;veflyveklub
+            </option>
+            <option value="BSK" >
+                Billund Sv&#230;veflyveklub
+            </option>
+            <option value="DaSK" >
+                Dansk Sv&#230;veflyvehistorisk Klub
+            </option>
+            <option value="DSvU" >
+                DSvU
+            </option>
+            <option value="EFKS" >
+                Elverum Flyklubb Seil
+            </option>
+            <option value="FFF" >
+                Frederikssund Frederiksv&#230;rk Flyveklub
+            </option>
+            <option value="Fyn" >
+                Fyns Sv&#230;veflyveklub
+            </option>
+            <option value="Holstebro" >
+                Holstebro Flyveklub
+            </option>
+            <option value="JAS" >
+                Jysk Aero Sport
+            </option>
+            <option value="Kalundborg" >
+                Kalundborg Flyveklub
+            </option>
+            <option value="Kolding" >
+                Kolding Flyveklub
+            </option>
+            <option value="LFS" >
+                Lolland-Falsters Sv&#230;veflyveklub
+            </option>
+            <option value="MSF" >
+                Midtsj&#230;llands Sv&#230;veflyveklub
+            </option>
+            <option value="NSvK" >
+                Nordjysk Sv&#230;veflyveklub
+            </option>
+            <option value="NSF" >
+                Nordsj&#230;llands Sv&#230;veflyveklub
+            </option>
+            <option value="PFG"                 selected
+>
+                Polyteknisk Flyvegruppe
+            </option>
+            <option value="SG70" >
+                SG70
+            </option>
+            <option value="Skive" >
+                Skive Sv&#230;veflyveklub
+            </option>
+            <option value="SFK" >
+                S&#248;nderjysk Flyveklub
+            </option>
+            <option value="VSK" >
+                Vejle Sv&#230;veflyveklub
+            </option>
+            <option value="Vestjylland" >
+                Vestjyllands Sv&#230;veflyveklub
+            </option>
+            <option value="Vestjysk" >
+                Vestjysk Sv&#230;veflyveklub
+            </option>
+            <option value="VBSK" >
+                Viborg Sv&#230;veflyveklub
+            </option>
+            <option value="&#216;SF" >
+                &#216;st-Sj&#230;llands Flyveklub
+            </option>
+            <option value="AASVK" >
+                Aarhus Sv&#230;veflyveklub
+            </option>
+    </select>
+</form>
+    </footer>
+</div>
+
+
+<script src="/bundles/jquery?v=MEIc0nE8WsNN2MG35XIa2VQaNLutnHl3mELcMKna4RI1"></script>
+
+<script src="/bundles/jqueryui?v=vSIScSnN2HNFF5BXNw_0YF3FdqR4qyRMPr3dhSgwzyU1"></script>
+
+<script src="/bundles/bootstrap?v=zlmhBh95IPpe6VU2JaDr5v3JqAphzhnp-tBnXHYQfvA1"></script>
+
+<script src="/bundles/intro?v=3NFEYHyw1fTdHH-nWeXNHvpjg4LmBLGIDYPDHaoAxtw1"></script>
+
+<script src="/bundles/datatables?v=5oY0PMGaMA1agLyy_HMLzOIkci8G8s7s-IDc9TwpNP41"></script>
+
+
+
+
+<script type="text/javascript">
+
+    $(document).ready(function() {
+        if ($(".tourable").length > 0) {
+            var intro = introJs();
+            intro.setOption("exitOnEsc", true);
+            intro.setOption("keyboardNavigation", true);
+            intro.setOption("hidePrev", true);
+            intro.setOption("hideNext", true);
+            intro.setOption("scrollToElement", true);
+            intro.setOption("disableInteraction", true);
+            intro.setOption("exitOnOverlayClick", false);
+            intro.setOption("showBullets", false);
+            intro.setOption("showStepNumbers", false);
+            intro.setOption("tooltipPosition", "auto");
+
+            intro.setOption("nextLabel", "Next >");
+            intro.setOption("prevLabel", "< Prev");
+            intro.setOption("skipLabel", "Skip");
+            intro.setOption("doneLabel", "Done");
+
+            $("#showhelp").click(function() {
+                // show intro tooltips only for visible elements
+                $("[data-intro]:hidden").each(function() {
+                    var $t = $(this);
+                    $t.attr({ 'data-intro-hidden': $t.attr('data-intro') }).removeAttr('data-intro');
+                });
+                $("[data-intro-hidden]:visible").each(function() {
+                    var $t = $(this);
+                    $t.attr({ 'data-intro': $t.attr('data-intro-hidden') }).removeAttr('data-intro-hidden');
+                });
+
+                intro.start();
+            });
+        } else {
+            $("#showhelp").hide();
+        }
+
+        $("#showdeveloperinfo").on("click", function() {
+            $("#developerinfo").show();
+        });
+    });
+</script>
+
+
+</body>
+</html>
