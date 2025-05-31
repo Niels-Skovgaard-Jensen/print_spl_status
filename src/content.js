@@ -300,7 +300,7 @@
             else if (options.notepadSize === 'large') lines = 10;
             printHtml += `
               <div class=\"notepad-area notepad-subnorm\">
-                <div class=\"notepad-label\">Noter / Bemærkninger til ovenstående norm:</div>
+                <div class=\"notepad-label\">Noter:</div>
                 <div class=\"notepad-lines\">
                   ${Array.from({length: lines}).map(() => '<div class=\"notepad-line\"></div>').join('')}
                 </div>
@@ -316,7 +316,7 @@
           else if (options.notepadSize === 'large') lines = 10;
           printHtml += `
             <div class=\"notepad-area notepad-major\">
-              <div class=\"notepad-label\">Noter / Bemærkninger til denne hovednorm:</div>
+              <div class=\"notepad-label\">Noter:</div>
               <div class=\"notepad-lines\">
                 ${Array.from({length: lines}).map(() => '<div class=\"notepad-line\"></div>').join('')}
               </div>
@@ -330,6 +330,20 @@
     printHtml += `
         </div>
       </body>
+      <script>
+        // Ensure first module starts on first page
+        window.addEventListener('DOMContentLoaded', function() {
+          var firstModule = document.querySelector('.module');
+          if (firstModule) {
+            firstModule.style.pageBreakBefore = 'always';
+            // Remove page break if it's already at the top
+            var rect = firstModule.getBoundingClientRect();
+            if (rect.top < 100) {
+              firstModule.style.pageBreakBefore = '';
+            }
+          }
+        });
+      </script>
       </html>
     `;
 
