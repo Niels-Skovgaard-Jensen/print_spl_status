@@ -108,7 +108,7 @@ function populateModuleCheckboxes(modules) {
     const checkbox = document.createElement('input');
     checkbox.type = 'checkbox';
     checkbox.value = module.id;
-    checkbox.checked = true;
+    checkbox.checked = false; // Default: not chosen
     
     label.appendChild(checkbox);
     label.appendChild(document.createTextNode(` ${module.text}`));
