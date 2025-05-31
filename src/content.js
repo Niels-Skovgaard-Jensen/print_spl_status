@@ -334,16 +334,19 @@
     `;
 
     // --- Print or Display Logic ---
+    if (window._splPrintWindow && !window._splPrintWindow.closed) {
+      try { window._splPrintWindow.close(); } catch (e) {}
+    }
     const printWindow = window.open('', '_blank');
+    window._splPrintWindow = printWindow;
     printWindow.document.open();
     printWindow.document.write(printHtml);
     printWindow.document.close();
-
-    // Focus and print the new window after a short delay to ensure content is loaded
     setTimeout(() => {
       printWindow.focus();
       printWindow.print();
       printWindow.close();
+      window._splPrintWindow = null;
     }, 500);
   }
 })();
