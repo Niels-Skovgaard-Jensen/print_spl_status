@@ -43,10 +43,10 @@ document.addEventListener('DOMContentLoaded', () => {
           selectedModules.push(checkbox.value);
         });
         // Get other options
-        const useCheckmarks = document.getElementById('useCheckmarks').checked;
         const useNotepad = document.getElementById('useNotepad').checked;
         const notepadSize = document.getElementById('notepadSize').value;
         const hideCompletedNorms = document.getElementById('hideCompletedNorms').checked;
+        const notepadPlacement = document.querySelector('input[name="notepadPlacement"]:checked').value;
         // Execute content script with options
         chrome.scripting.executeScript({
           target: { tabId: tabs[0].id },
@@ -57,10 +57,10 @@ document.addEventListener('DOMContentLoaded', () => {
             action: 'formatTraining',
             options: {
               selectedModules,
-              useCheckmarks,
               useNotepad,
               notepadSize,
-              hideCompletedNorms
+              hideCompletedNorms,
+              notepadPlacement
             }
           });
         });
@@ -70,14 +70,17 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // Enable/disable notepad size select based on notepad checkbox
+  // Enable/disable notepad size and placement select based on notepad checkbox
   const useNotepadCheckbox = document.getElementById('useNotepad');
   const notepadSizeSelect = document.getElementById('notepadSize');
-  function updateNotepadSizeState() {
+  const notepadPlacementContainer = document.getElementById('notepadPlacementContainer');
+  function updateNotepadControlsState() {
     notepadSizeSelect.disabled = !useNotepadCheckbox.checked;
+    notepadPlacementContainer.style.opacity = useNotepadCheckbox.checked ? '1' : '0.5';
+    Array.from(notepadPlacementContainer.querySelectorAll('input')).forEach(r => r.disabled = !useNotepadCheckbox.checked);
   }
-  useNotepadCheckbox.addEventListener('change', updateNotepadSizeState);
-  updateNotepadSizeState();
+  useNotepadCheckbox.addEventListener('change', updateNotepadControlsState);
+  updateNotepadControlsState();
 });
 
 // Function to extract module IDs from the page

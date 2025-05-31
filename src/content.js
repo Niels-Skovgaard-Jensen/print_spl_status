@@ -164,7 +164,7 @@
           
           /* Checkmarks for completed items */
           .checkmark {
-            display: ${options.useCheckmarks ? 'inline-flex' : 'none'};
+            display: inline-flex;
             justify-content: center;
             align-items: center;
             width: 16px;
@@ -194,15 +194,6 @@
           /* Header and Footer for printing */
           @media print {
             header, footer { display: none; } /* Hide web headers/footers */
-            
-            body::before {
-              content: "Training Status - ${pilotInfo.split('-')[0].trim()}";
-              position: fixed;
-              top: 0.5cm;
-              left: 1.5cm;
-              font-size: 8pt;
-              color: #888;
-            }
             body::after {
               content: "Page " counter(page); /* Using just counter(page) as counter(pages) can be unreliable */
               position: fixed;
@@ -291,6 +282,7 @@
       `;
       if (module.items.length > 0) {
         printHtml += `<ul class="module-items">`;
+        let hasNotCompleted = false;
         module.items.forEach(item => {
           if (options.hideCompletedNorms && item.status === 'completed') return;
           printHtml += `
@@ -300,8 +292,9 @@
               <span class="module-item-text">${item.text}</span>
             </li>
           `;
-          // Add notepad for this sub-norm if not completed and user wants notepad
-          if (item.status !== 'completed' && options.useNotepad !== false) {
+          if (item.status !== 'completed') hasNotCompleted = true;
+          // Only add notepad for sub-norm if placement is 'sub'
+          if (item.status !== 'completed' && options.useNotepad !== false && options.notepadPlacement !== 'major') {
             let lines = 5;
             if (options.notepadSize === 'small') lines = 2;
             else if (options.notepadSize === 'large') lines = 10;
@@ -316,36 +309,41 @@
           }
         });
         printHtml += `</ul>`;
+        // Add notepad for major norm if placement is 'major' and any sub-norm is not completed
+        if (hasNotCompleted && options.useNotepad !== false && options.notepadPlacement === 'major') {
+          let lines = 5;
+          if (options.notepadSize === 'small') lines = 2;
+          else if (options.notepadSize === 'large') lines = 10;
+          printHtml += `
+            <div class=\"notepad-area notepad-major\">
+              <div class=\"notepad-label\">Noter / Bemærkninger til denne hovednorm:</div>
+              <div class=\"notepad-lines\">
+                ${Array.from({length: lines}).map(() => '<div class=\"notepad-line\"></div>').join('')}
+              </div>
+            </div>
+          `;
+        }
       }
       printHtml += `</div>`;
     });
 
     printHtml += `
         </div>
-        <script>
-          // Auto-print on load feature (disabled by default)
-          // setTimeout(() => window.print(), 500);
-        </script>
       </body>
       </html>
     `;
 
-    // Replace current document content
-    document.open();
-    document.write(printHtml);
-    document.close();
+    // --- Print or Display Logic ---
+    const printWindow = window.open('', '_blank');
+    printWindow.document.open();
+    printWindow.document.write(printHtml);
+    printWindow.document.close();
+
+    // Focus and print the new window after a short delay to ensure content is loaded
+    setTimeout(() => {
+      printWindow.focus();
+      printWindow.print();
+      printWindow.close();
+    }, 500);
   }
-  
-  // If we don't receive a message from the popup within reasonable time,
-  // execute the format with default options (all modules selected)
-  const messageTimeout = setTimeout(() => {
-    formatTrainingPage();
-  }, 500);
-  
-  // Clear the timeout if we receive the message
-  chrome.runtime.onMessage.addListener((message) => {
-    if (message.action === 'formatTraining') {
-      clearTimeout(messageTimeout);
-    }
-  });
 })();
