@@ -1,0 +1,44 @@
+name: Release Chrome Extension
+
+on:
+  push:
+    tags:
+      - 'v*' # Trigger on version tags
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Get version from tag
+        id: get_version
+        run: echo "VERSION=${GITHUB_REF#refs/tags/v}" >> $GITHUB_ENV
+
+      - name: Create ZIP file
+        run: |
+          cd src
+          zip -r "../training-status-printer-v$VERSION.zip" . -x ".*" -x "__MACOSX*"
+          cd ..
+
+      - name: Create Release
+        id: create_release
+        uses: softprops/action-gh-release@v1
+        with:
+          files: training-status-printer-v${{ env.VERSION }}.zip
+          name: Release ${{ env.VERSION }}
+          draft: false
+          prerelease: false
+          generate_release_notes: true
+
+      - name: Upload to Chrome Web Store
+        if: success()
+        run: |
+          curl -H "Authorization: Bearer ${{ secrets.CHROME_WEBSTORE_TOKEN }}" \
+               -H "x-goog-api-version: 2" \
+               -X PUT \
+               -T "training-status-printer-v$VERSION.zip" \
+               -v "https://www.googleapis.com/upload/chromewebstore/v1.1/items/${{ secrets.CHROME_EXTENSION_ID }}"
+        env:
+          CHROME_WEBSTORE_TOKEN: ${{ secrets.CHROME_WEBSTORE_TOKEN }}
+          CHROME_EXTENSION_ID: ${{ secrets.CHROME_EXTENSION_ID }}
