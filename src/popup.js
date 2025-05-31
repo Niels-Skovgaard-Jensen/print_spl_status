@@ -46,6 +46,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const useCheckmarks = document.getElementById('useCheckmarks').checked;
         const useNotepad = document.getElementById('useNotepad').checked;
         const notepadSize = document.getElementById('notepadSize').value;
+        const hideCompletedNorms = document.getElementById('hideCompletedNorms').checked;
         // Execute content script with options
         chrome.scripting.executeScript({
           target: { tabId: tabs[0].id },
@@ -58,7 +59,8 @@ document.addEventListener('DOMContentLoaded', () => {
               selectedModules,
               useCheckmarks,
               useNotepad,
-              notepadSize
+              notepadSize,
+              hideCompletedNorms
             }
           });
         });

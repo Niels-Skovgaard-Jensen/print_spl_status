@@ -292,6 +292,7 @@
       if (module.items.length > 0) {
         printHtml += `<ul class="module-items">`;
         module.items.forEach(item => {
+          if (options.hideCompletedNorms && item.status === 'completed') return;
           printHtml += `
             <li class="module-item status-${item.status}">
               <span class="checkmark">${item.status === 'completed' ? '✓' : ''}</span>
