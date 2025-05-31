@@ -236,6 +236,36 @@
               display: none;
             }
           }
+          /* Notepad area styling */
+          .notepad-area {
+            margin: 18px 0 8px 0;
+            padding: 10px 12px 8px 12px;
+            border: 1px dashed #bbb;
+            border-radius: 6px;
+            background: #fcfcfc;
+            min-height: 60px;
+            max-width: 600px;
+          }
+          .notepad-label {
+            font-size: 10pt;
+            color: #888;
+            margin-bottom: 4px;
+          }
+          .notepad-lines {
+            margin-top: 2px;
+          }
+          .notepad-line {
+            border-bottom: 1px dotted #bbb;
+            height: 18px;
+            margin-bottom: 2px;
+          }
+          @media print {
+            .notepad-area {
+              background: none;
+              -webkit-print-color-adjust: exact;
+              print-color-adjust: exact;
+            }
+          }
         </style>
       </head>
       <body>
@@ -269,6 +299,20 @@
               <span class="module-item-text">${item.text}</span>
             </li>
           `;
+          // Add notepad for this sub-norm if not completed and user wants notepad
+          if (item.status !== 'completed' && options.useNotepad !== false) {
+            let lines = 5;
+            if (options.notepadSize === 'small') lines = 2;
+            else if (options.notepadSize === 'large') lines = 10;
+            printHtml += `
+              <div class=\"notepad-area notepad-subnorm\">
+                <div class=\"notepad-label\">Noter / Bemærkninger til ovenstående norm:</div>
+                <div class=\"notepad-lines\">
+                  ${Array.from({length: lines}).map(() => '<div class=\"notepad-line\"></div>').join('')}
+                </div>
+              </div>
+            `;
+          }
         });
         printHtml += `</ul>`;
       }

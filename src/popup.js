@@ -42,10 +42,10 @@ document.addEventListener('DOMContentLoaded', () => {
         document.querySelectorAll('#moduleCheckboxes input[type="checkbox"]:checked').forEach(checkbox => {
           selectedModules.push(checkbox.value);
         });
-        
         // Get other options
         const useCheckmarks = document.getElementById('useCheckmarks').checked;
-        
+        const useNotepad = document.getElementById('useNotepad').checked;
+        const notepadSize = document.getElementById('notepadSize').value;
         // Execute content script with options
         chrome.scripting.executeScript({
           target: { tabId: tabs[0].id },
@@ -56,7 +56,9 @@ document.addEventListener('DOMContentLoaded', () => {
             action: 'formatTraining',
             options: {
               selectedModules,
-              useCheckmarks
+              useCheckmarks,
+              useNotepad,
+              notepadSize
             }
           });
         });
@@ -65,6 +67,15 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   });
+
+  // Enable/disable notepad size select based on notepad checkbox
+  const useNotepadCheckbox = document.getElementById('useNotepad');
+  const notepadSizeSelect = document.getElementById('notepadSize');
+  function updateNotepadSizeState() {
+    notepadSizeSelect.disabled = !useNotepadCheckbox.checked;
+  }
+  useNotepadCheckbox.addEventListener('change', updateNotepadSizeState);
+  updateNotepadSizeState();
 });
 
 // Function to extract module IDs from the page
