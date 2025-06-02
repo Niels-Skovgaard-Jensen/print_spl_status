@@ -2,8 +2,8 @@
 {
   "manifest_version": 3,
   "name": "Training Status Printer",
-  "version": "1.1",
-  "description": "Formats the training status page for A4 printing.",
+  "version": "1.2",
+  "description": "Formats training status pages for A4 printing or mobile editing.",
   "permissions": ["activeTab", "scripting"],
   "action": {
     "default_popup": "popup.html",
