@@ -34,6 +34,10 @@
   <h3>Training Status Printer</h3>
   
   <div class="options">
+    <div style="margin-bottom: 10px;">
+      <label><input type="radio" name="outputFormat" id="formatPrint" value="print" checked> Print format (A4)</label><br>
+      <label><input type="radio" name="outputFormat" id="formatMobile" value="mobile"> Mobile format (editable)</label>
+    </div>
     <label>
       <input type="checkbox" id="useNotepad" checked>
       Show notepad for not completed norms
@@ -69,7 +73,7 @@
     </div>
   </div>
 
-  <button id="formatButton">Format for Print</button>
+  <button id="formatButton">Generate Document</button>
   <script src="popup.js"></script>
 </body>
 </html>

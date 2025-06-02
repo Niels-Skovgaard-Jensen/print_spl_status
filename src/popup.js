@@ -43,6 +43,7 @@ document.addEventListener('DOMContentLoaded', () => {
           selectedModules.push(checkbox.value);
         });
         // Get other options
+        const outputFormat = document.querySelector('input[name="outputFormat"]:checked').value;
         const useNotepad = document.getElementById('useNotepad').checked;
         const notepadSize = document.getElementById('notepadSize').value;
         const hideCompletedNorms = document.getElementById('hideCompletedNorms').checked;
@@ -57,6 +58,7 @@ document.addEventListener('DOMContentLoaded', () => {
             action: 'formatTraining',
             options: {
               selectedModules,
+              outputFormat,
               useNotepad,
               notepadSize,
               hideCompletedNorms,
