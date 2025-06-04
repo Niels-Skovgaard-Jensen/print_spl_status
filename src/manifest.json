@@ -2,8 +2,8 @@
 {
   "manifest_version": 3,
   "name": "Training Status Printer",
-  "version": "1.2",
-  "description": "Formats training status pages for A4 printing or mobile editing.",
+  "version": "1.2.1",
+  "description": "Formats training status pages for A4 printing or mobile editing with persistent notes. Mobile format includes auto-save, export/import JSON data, and offline editable text areas.",
   "permissions": ["activeTab", "scripting"],
   "action": {
     "default_popup": "popup.html",
