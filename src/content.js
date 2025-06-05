@@ -206,6 +206,20 @@
               font-size: 8pt;
               color: #888;
             }
+            
+            /* Ensure status indicators are filled when printing */
+            .status-indicator {
+              -webkit-print-color-adjust: exact !important;
+              color-adjust: exact !important;
+              print-color-adjust: exact !important;
+            }
+            
+            /* Ensure status badges have proper colors when printing */
+            .status-text-badge {
+              -webkit-print-color-adjust: exact !important;
+              color-adjust: exact !important;
+              print-color-adjust: exact !important;
+            }
           }
 
           /* Print button */
